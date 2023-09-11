@@ -155,12 +155,11 @@ int main() {
     (array1 * array2).print();
 
       try {
-       Array divide = array1 / array2;
-       std::cout << "delenie= ";
-       divide.print();
-      } 
-       catch (const std::invalid_argument& e) {
-       std::cout << e.what() << std::endl;
+            Array divide = array1 / array2;
+            std::cout << "delenie= ";
+            divide.print();
+       } catch (const std::invalid_argument& e) {
+            std::cout << e.what() << std::endl;
        }
 
     while (true) {
