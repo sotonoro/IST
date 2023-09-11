@@ -1,22 +1,21 @@
 #include <iostream>
 #include <vector>
 #include <iomanip>
-using namespace std;
 
 int main() {
     int n;
-    cin >> n;
-    vector<double> arr(n);
+    std::cin >> n;
+    std::vector<double> arr(n);
 
     for (int i = 0; i < n; i++) {
-        cin >> arr[i];
+        std::cin >> arr[i];
     }
 
-    cout << n << endl;
+    std::cout << n << std::endl;
     for (int i = 0; i < n; i++) {
-        cout << fixed << setprecision(3) << arr[i] << " ";
+        std::cout << std::fixed << std::setprecision(3) << arr[i] << " ";
     }
-    cout << endl;
+    std::cout << std::endl;
 
     double sum = 0;
     for (int i = 0; i < n; i++) {
@@ -26,9 +25,9 @@ int main() {
     arr.push_back(sum / n);
 
     for (int i = 0; i < arr.size(); i++) {
-        cout << fixed << setprecision(3) << arr[i] << " ";
+        std::cout << std::fixed << std::setprecision(3) << arr[i] << " ";
     }
-    cout << endl;
+    std::cout << std::endl;
     
     double max_value = arr[0];
 
@@ -45,35 +44,35 @@ int main() {
     }
 
     for (int i = 0; i < arr.size(); i++) {
-        cout << fixed << setprecision(3) << arr[i] << " ";
+        std::cout << std::fixed << std::setprecision(3) << arr[i] << " ";
     }
-    cout << endl;
+    std::cout << std::endl;
 
     int choice;
-    cin >> choice;
+    std::cin >> choice;
 
     while (choice != 0) {
         if (choice == 1) {
             double newElement;
       
-            cin >> newElement;
+            std::cin >> newElement;
             arr.push_back(newElement);
-            cout << "+: " << arr.size() << endl;
+            std::cout << "+: " << arr.size() << std::endl;
         }
         else if (choice == 2) {
             if (!arr.empty()) {
                 arr.pop_back();
-                cout << "-: " << arr.size() << endl;
+                std::cout << "-: " << arr.size() << std::endl;
             }
             else {
-                //cout << "Массив пустой, невозможно удалить элемент." << endl;
+                std::cout << "Массив пустой, невозможно удалить элемент." << std::endl;
             }
         }
 
         for (int i = 0; i < arr.size(); i++) {
-            cout << fixed << setprecision(3) << arr[i] << " ";
+            std::cout << std::fixed << std::setprecision(3) << arr[i] << " ";
         }
-        cout << endl;
+        std::cout << std::endl;
 
         sum = 0;
         for (int i = 0; i < arr.size(); i++) {
@@ -83,9 +82,9 @@ int main() {
         arr.push_back(sum / (arr.size()-1));
 
         for (int i = 0; i < arr.size(); i++) {
-            cout << fixed << setprecision(3) << arr[i] << " ";
+            std::cout << std::fixed << std::setprecision(3) << arr[i] << " ";
         }
-        cout << endl;
+        std::cout << std::endl;
 
         max_value = arr[0];
         for (int i = 1; i < arr.size(); i++) {
@@ -101,10 +100,10 @@ int main() {
         }
 
         for (int i = 0; i < arr.size(); i++) {
-            cout << fixed << setprecision(3) << arr[i] << " ";
+            std::cout << std::fixed << std::setprecision(3) << arr[i] << " ";
         }
-        cout << endl;
-        cin >> choice;
+        std::cout << std::endl;
+        std::cin >> choice;
     }
 
     return 0;
